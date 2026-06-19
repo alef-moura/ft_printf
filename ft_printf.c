@@ -6,39 +6,55 @@
 /*   By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 18:26:43 by alesferr          #+#    #+#             */
-/*   Updated: 2026/06/18 18:26:46 by alesferr         ###   ########.fr       */
+/*   Updated: 2026/06/19 11:32:03 by alesferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
- void
-       foo(char *fmt, ...)   /* '...' is C syntax for a variadic function */
+#include "ft_printf.h"
 
+static int	ft_checks(va_list *list, char c)
+{
+	if (c == 'c')
+		return (ft_putchar(va_arg(*list, int)));
+	if (c == 's')
+		return (ft_putstr(va_arg(*list, char *)));
+	if (c == 'p')
+		return (ft_putptr(va_arg(*list, void *)));
+	if (c == 'd' || c == 'i')
+		return (ft_putnbr(va_arg(*list, int)));
+	if (c == 'u')
+		return (ft_putnbr_unsigned(va_arg(*list, unsigned int)));
+	if (c == 'x' || c == 'X')
+		return (ft_puthexa(va_arg(*list, unsigned int), c));
+	return (0);
+}
+
+int	ft_printf(const char *fmt, ...)
+{
+	int		i;
+	int		count;
+	va_list	list;
+
+	i = 0;
+	count = 0;
+	if (!fmt)
+		return (-1);
+	va_start(list, fmt);
+	while (fmt[i])
+	{
+		if (fmt[i] == '%')
 		{
-           va_list ap;
-           int d;
-           char c;
-           char *s;
-
-           va_start(ap, fmt);
-           while (*fmt)
-               switch (*fmt++) {
-               case 's':              /* string */
-                   s = va_arg(ap, char *);
-                   printf("string %s\n", s);
-                   break;
-               case 'd':              /* int */
-                   d = va_arg(ap, int);
-                   printf("int %d\n", d);
-                   break;
-               case 'c':              /* char */
-                   /* need a cast here since va_arg only
-                      takes fully promoted types */
-                   c = (char) va_arg(ap, int);
-                   printf("char %c\n", c);
-                   break;
-               }
-           va_end(ap);
-       }
-       
+			i++;
+			if (fmt[i] == '%')
+				count += (ft_putchar('%'));
+			else
+				count += ft_checks(&list, fmt[i]);
+		}
+		else
+			count += ft_putchar(fmt[i]);
+		i++;
+	}
+	va_end(list);
+	return (count);
