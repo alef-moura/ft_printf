@@ -6,7 +6,7 @@
 /*   By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 18:26:43 by alesferr          #+#    #+#             */
-/*   Updated: 2026/06/19 11:32:03 by alesferr         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:26:49 by alesferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,31 @@ static int	ft_checks(va_list *list, char c)
 	return (0);
 }
 
-int	ft_printf(const char *fmt, ...)
+int	ft_printf(const char *format, ...)
 {
+	va_list	list;
 	int		i;
 	int		count;
-	va_list	list;
 
 	i = 0;
 	count = 0;
-	if (!fmt)
+	if (!format)
 		return (-1);
-	va_start(list, fmt);
-	while (fmt[i])
+	va_start(list, format);
+	while (format[i] != '\0')
 	{
-		if (fmt[i] == '%')
+		if (format[i] == '%')
 		{
 			i++;
-			if (fmt[i] == '%')
+			if (format[i] == '%')
 				count += (ft_putchar('%'));
 			else
-				count += ft_checks(&list, fmt[i]);
+				count += ft_checks(&list, format[i]);
 		}
 		else
-			count += ft_putchar(fmt[i]);
+			count += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(list);
 	return (count);
+}
