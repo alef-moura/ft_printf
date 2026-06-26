@@ -6,7 +6,7 @@
 /*   By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 16:29:40 by alesferr          #+#    #+#             */
-/*   Updated: 2026/06/26 18:39:06 by alesferr         ###   ########.fr       */
+/*   Updated: 2026/06/26 19:07:26 by alesferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ int	ft_putnbr(int n)
 	i += ft_putchar((n % 10) + '0');
 	return (i);
 }
-

@@ -6,7 +6,7 @@
 /*   By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 14:57:39 by alesferr          #+#    #+#             */
-/*   Updated: 2026/06/26 18:48:27 by alesferr         ###   ########.fr       */
+/*   Updated: 2026/06/26 19:10:19 by alesferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_puthex(unsigned long long n, char str)
 {
 	char	*base;
-	int	i;
+	int		i;
 
 	i = 0;
 	if (str == 'x')

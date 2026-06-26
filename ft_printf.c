@@ -6,15 +6,15 @@
 /*   By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 18:26:43 by alesferr          #+#    #+#             */
-/*   Updated: 2026/06/26 15:00:22 by alesferr         ###   ########.fr       */
+/*   Updated: 2026/06/26 19:18:44 by alesferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_check_str(char c, va_list args)
+int	ft_check_str(char c, va_list args)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (c == 'c')
@@ -34,11 +34,11 @@ int ft_check_str(char c, va_list args)
 	return (count);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list args;
-	size_t  i;
-	int     count;
+	va_list	args;
+	size_t	i;
+	int		count;
 
 	if (!str)
 		return (-1);
