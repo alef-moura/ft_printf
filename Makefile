@@ -6,7 +6,7 @@
 #    By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/18 12:37:23 by alesferr          #+#    #+#              #
-#    Updated: 2026/06/24 22:14:52 by alesferr         ###   ########.fr        #
+#    Updated: 2026/06/26 17:53:27 by alesferr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,15 @@ CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
 AR      = ar rcs
 RM      = rm -f
+SRCS_D  = srcs/
 
-SRCS    = ft_printf.c 
-			
+SRCS    = ft_printf.c \
+			$(SRCS_D)ft_putchar.c \
+			$(SRCS_D)ft_putstr.c \
+			$(SRCS_D)ft_putnbr.c \
+			$(SRCS_D)ft_putnbr_unsigned.c \
+			$(SRCS_D)ft_puthex.c \
+			$(SRCS_D)ft_putptr.c \
 
 all: $(NAME)
 

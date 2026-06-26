@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 12:42:33 by alesferr          #+#    #+#             */
-/*   Updated: 2026/06/26 17:52:54 by alesferr         ###   ########.fr       */
+/*   Created: 2026/06/26 13:46:21 by alesferr          #+#    #+#             */
+/*   Updated: 2026/06/26 18:34:06 by alesferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#   define FT_PRINTF_H
+#include "ft_printf.h"
 
-#   include <stdarg.h>
-#   include <unistd.h>
-
-int ft_printf(const char *str, ...);
-int ft_check_str(char c, va_list args);
-
-int ft_putchar(int c);
-int ft_putstr(char *str);
-int ft_putnbr(int n);
-int ft_putnbr_unsigned(unsigned int n);
-int ft_puthex(unsigned long long n, char str);
-int ft_putptr(unsigned long long ptr);
-
-#endif
+int	ft_putchar(int c)
+{
+	return (write(1, &c, 1));
+}

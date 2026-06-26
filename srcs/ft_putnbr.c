@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 12:42:33 by alesferr          #+#    #+#             */
-/*   Updated: 2026/06/26 17:52:54 by alesferr         ###   ########.fr       */
+/*   Created: 2026/06/25 16:29:40 by alesferr          #+#    #+#             */
+/*   Updated: 2026/06/26 18:39:06 by alesferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#   define FT_PRINTF_H
+#include "ft_printf.h"
 
-#   include <stdarg.h>
-#   include <unistd.h>
+int	ft_putnbr(int n)
+{
+	int	i;
 
-int ft_printf(const char *str, ...);
-int ft_check_str(char c, va_list args);
+	i = 0;
+	if (n == -2147483648)
+	{
+		i += write(1, "-2147483648", 11);
+		return (i);
+	}
+	if (n < 0)
+	{
+		i += write(1, "-", 1);
+		n = -n;
+	}
+	if (n > 9)
+		i += ft_putnbr(n / 10);
+	i += ft_putchar((n % 10) + '0');
+	return (i);
+}
 
-int ft_putchar(int c);
-int ft_putstr(char *str);
-int ft_putnbr(int n);
-int ft_putnbr_unsigned(unsigned int n);
-int ft_puthex(unsigned long long n, char str);
-int ft_putptr(unsigned long long ptr);
-
-#endif

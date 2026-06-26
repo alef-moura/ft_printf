@@ -6,13 +6,13 @@
 /*   By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 18:26:43 by alesferr          #+#    #+#             */
-/*   Updated: 2026/06/25 17:26:52 by alesferr         ###   ########.fr       */
+/*   Updated: 2026/06/26 15:00:22 by alesferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_check_format(char c, va_list args)
+int ft_check_str(char c, va_list args)
 {
 	int count;
 
