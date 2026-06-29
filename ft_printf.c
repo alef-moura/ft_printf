@@ -6,7 +6,7 @@
 /*   By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 18:26:43 by alesferr          #+#    #+#             */
-/*   Updated: 2026/06/26 19:18:44 by alesferr         ###   ########.fr       */
+/*   Updated: 2026/06/29 12:29:58 by alesferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_printf(const char *str, ...)
 		{
 			i++;
 			if (str[i])
-				count += ft_check_format(str[i], args);
+				count += ft_check_str(str[i], args);
 			else
 				break ;
 		}

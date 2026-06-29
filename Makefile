@@ -6,14 +6,14 @@
 #    By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/18 12:37:23 by alesferr          #+#    #+#              #
-#    Updated: 2026/06/26 17:53:27 by alesferr         ###   ########.fr        #
+#    Updated: 2026/06/29 12:47:09 by alesferr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    = libftprintf.a
 OBJS    = $(SRCS:.c=.o)
 CC      = cc
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = -Wall -Wextra -Werror -I .
 AR      = ar rcs
 RM      = rm -f
 SRCS_D  = srcs/
@@ -34,7 +34,7 @@ $(NAME): $(OBJS)
 clean: 
 		$(RM) $(OBJS)
 
-fclear: clear
+fclean: clean
 		$(RM) $(NAME)
 
 re: fclean all

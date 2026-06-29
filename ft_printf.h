@@ -6,7 +6,7 @@
 /*   By: alesferr <alesferr@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 12:42:33 by alesferr          #+#    #+#             */
-/*   Updated: 2026/06/26 19:16:14 by alesferr         ###   ########.fr       */
+/*   Updated: 2026/06/29 12:32:33 by alesferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 
 int	ft_printf(const char *str, ...);
-int	ft_check_str(char c, va_list args);
 
 int	ft_putchar(int c);
 int	ft_putstr(char *str);
